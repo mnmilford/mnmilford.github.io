@@ -385,20 +385,17 @@ a.btn:hover {
   color: #8a8a8a;
   margin-bottom: 15px;
 }
-.skills-section .desc {
-  color: #666;
+.skills-section .panel-heading {
+  padding-top: 15px;
+  padding-bottom: 0;
+  font-size: 200px;
+  line-height: 200px;
 }
-.skills-section .skill-tag {
-  -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
-  -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
-  padding: 6px 30px;
-  display: inline-block;
-  margin-right: 10px;
-  border: 1px solid #f5f5f5;
-  font-weight: 500;
-  margin-bottom: 15px;
-  font-size: 16px;
+.skills-section .panel-body {
+  padding: 0;
+}
+.skills-section .skill-name {
+  margin: 0;
 }
 .chart-easy-pie {
   position: relative;
@@ -620,6 +617,10 @@ a.btn:hover {
   }
   .timeline .job-desc ul li{
     margin-bottom: 10px;
+  }
+  .skills-section .panel-heading {
+    font-size: 125px;
+    line-height: 125px;
   }
   .education-section .item {
     padding: 0;
