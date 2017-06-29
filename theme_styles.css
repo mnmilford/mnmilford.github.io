@@ -440,7 +440,7 @@ a.btn:hover {
   font-size: 16px;
 }
 .chart-easy-pie {
-  positon: relative;
+  position: relative;
 }
 .chart {
   width: 110px;
@@ -686,10 +686,10 @@ a.btn:hover {
   }
   .header .contact-info ul {
     display: flex;
+    justify-content: center;
   }
   .header .contact-info li:first-child {
     display: flex;
-    flex-grow: 2;
     justify-content: center;
     align-items: center;
   }
@@ -709,9 +709,18 @@ a.btn:hover {
   .timeline .place {
     margin-bottom: 5px;
   }
+  .timeline .location {
+    position: inherit;
+  }
   .timeline .job-meta {
     position: static;
     margin-bottom: 15px;
+  }
+  .timeline .job-desc ul {
+    padding-left: 15px;
+  }
+  .timeline .job-desc ul li{
+    margin-bottom: 10px;
   }
   .education-section .item {
     padding: 0;
