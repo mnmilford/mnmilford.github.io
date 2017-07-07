@@ -505,12 +505,26 @@ a.btn:hover {
   left: 0;
   top: 0;
 }
+.contact-section {
+  background-color: #566F7C;
+  margin-bottom: 0;
+}
+.contact-section .section-title {
+  color: #fff;
+}
+.contact-section a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+}
+.contact-section a:hover {
+  color: rgb(255, 255, 255);
+}
 .contact-section .intro {
   position: relative;
   padding: 30px;
   padding-left: 190px;
   font-size: 16px;
-  color: #666;
+  color: #fff;
 }
 .contact-section .intro .profile-image {
   width: 120px;
@@ -527,35 +541,6 @@ a.btn:hover {
 }
 .contact-section .service-list li {
   margin-bottom: 15px;
-}
-.contact-section .service-list .fa {
-  color: #607D8B;
-}
-.contact-section .social {
-  margin-bottom: 0;
-}
-.contact-section .social li {
-  margin-right: 10px;
-}
-.contact-section .social li:last-child {
-  margin-right: 0;
-}
-.contact-section .social a {
-  display: inline-block;
-  text-align: center;
-  font-size: 24px;
-  color: #8a8a8a;
-}
-.contact-section .social a:hover {
-  color: #607D8B;
-}
-.footer .container {
-  padding: 30px;
-  color: #8a8a8a;
-  letter-spacing: 0.5px;
-}
-.footer .container a {
-  color: #8a8a8a;
 }
 
 /* Extra small devices (phones, less than 768px) */
