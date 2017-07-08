@@ -76,16 +76,17 @@ a.btn:hover {
   padding-top: 15px;
   padding-bottom: 150px;
 }
-.header .social {
+.social-networks .social {
   margin-bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #fff;
 }
-.header .social img {
+.social-networks .social img {
   height: 24px;
 }
-.header .social a {
+.social-networks .social a {
   background: rgba(255, 255, 255, 0.8);
   display: flex;
   justify-content: center;
@@ -99,7 +100,7 @@ a.btn:hover {
   font-size: 16px;
   border: 2px solid #41545E;
 }
-.header .social a:hover {
+.social-networks .social a:hover {
   border-color: #41545E;
 }
 .header .actions {
@@ -149,22 +150,25 @@ a.btn:hover {
   max-width: 800px;
   margin: 0 auto;
 }
-.header .social-networks {
+.social-networks {
   background: #4b626d;
   padding-top: 30px;
   padding-bottom: 30px;
   font-size: 16px;
+  -webkit-box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
 }
-.header .social-networks ul {
+.social-networks ul {
   margin-bottom: 0;
 }
-.header .social-networks li {
+.social-networks li {
   margin-right: 10px;
 }
-.header .social-networks li a {
+.social-networks li a {
   color: rgba(255, 255, 255, 0.8);
 }
-.header .social-networks li:last-child {
+.social-networks li:last-child {
   margin-right: 0;
 }
 
@@ -572,11 +576,11 @@ a.btn:hover {
   .header .top-bar {
     padding-bottom: 100px;
   }
-  .header .social {
+  .social-networks .social {
     margin: 0 auto;
     flex-wrap: wrap;
   }
-  .header .social li:first-of-type {
+  .social-networks .social li:first-of-type {
     flex-basis: 100%;
     margin-bottom: 15px;
   }
@@ -598,16 +602,16 @@ a.btn:hover {
   .header .title {
     font-size: 22px;
   }
-  .header .social-networks ul {
+  .social-networks ul {
     display: flex;
     justify-content: center;
   }
-  .header .social-networks li:first-child {
+  .social-networks li:first-child {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .header .social-networks li {
+  .social-networks li {
     margin-right: 8px;
   }
   .section {
