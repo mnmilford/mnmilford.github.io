@@ -530,7 +530,7 @@ a.btn:hover {
   top: 0;
 }
 .contact-section {
-  background-color: #566F7C;
+  background-color: #41545E;
   margin-bottom: 0;
 }
 .contact-section .section-title {
@@ -671,10 +671,15 @@ a.btn:hover {
   }
   .contact-section .intro {
     padding: 0;
+  }
+  .contact-section .intro p:last-child {
+    padding-top: 15px;
+    font-size: 18px;
     text-align: center;
   }
   .contact-section .intro .profile-image {
     position: static;
+    display: block;
     margin: 0 auto;
     margin-bottom: 30px;
     text-align: center;
