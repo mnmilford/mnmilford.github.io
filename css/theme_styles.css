@@ -38,7 +38,7 @@ p {
 a.btn {
   background: #4b626d;
   color: #fff;
-  padding: 8px 15px;
+  padding: 14px 15px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   -ms-border-radius: 2px;
@@ -74,7 +74,7 @@ a.btn:hover {
 .header .top-bar {
   position: relative;
   padding-top: 15px;
-  padding-bottom: 120px;
+  padding-bottom: 150px;
 }
 .header .social {
   margin-bottom: 0;
@@ -543,8 +543,11 @@ a.btn:hover {
   margin-bottom: 15px;
 }
 
-/* Extra small devices (phones, less than 768px) */
+/* Phones less than 768px */
 @media (max-width: 767px) {
+  .header .top-bar {
+    padding-bottom: 100px;
+  }
   .header .social {
     margin: 0 auto;
     flex-wrap: wrap;
@@ -560,13 +563,10 @@ a.btn:hover {
     text-align: center;
   }
   .header .actions .btn {
-    margin-bottom: 15px;
-    font-size: 12px;
+    font-size: 13px;
     display: inline-block;
-    width: 100%;
-  }
-  .header .actions .btn:last-child {
-    margin-bottom: 0;
+    width: calc(50% - 10px);
+    line-height: 12px;
   }
   .header .name {
     font-size: 36px;
@@ -658,8 +658,14 @@ a.btn:hover {
   .contact-section .service-list {
     margin-left: 0;
   }
-  .contact-section .social {
-    margin: 0 auto;
+}
+
+/* Phones less than 412px */
+@media (max-width: 411px) {
+  .header .actions .btn {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
   }
 }
 /* Small devices (tablets, 768px and up) */
