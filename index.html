@@ -187,9 +187,15 @@
         
         <section id="skills-section" class="skills-section section text-center">
             <h2 class="section-title">Professional Skills</h2>
-            <div class="top-skills">
+            <ul id="filters1" class="filters1 clearfix">
+                <li class="type active" data-filter="*">All</li>
+                <li class="type" data-filter=".language">Web Languages</li>
+                <li class="type" data-filter=".webtool">Web Tools</li>
+                <li class="type" data-filter=".other">Other</li>
+            </ul><!--//filters-->
+            <div class="items-wrapper top-skills">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="item language col-xs-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="panel">
                             <div class="panel-heading">
                                 <i class="devicon-html5-plain-wordmark colored"></i>
@@ -199,7 +205,7 @@
                             </div><!--//item-inner-->
                         </div><!--/panel -->
                     </div><!--//item-->
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="item language col-xs-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="panel">
                             <div class="panel-heading">
                                 <i class="devicon-css3-plain-wordmark colored"></i>
@@ -209,7 +215,7 @@
                             </div><!--//item-inner-->
                         </div><!--/panel -->
                     </div><!--//item-->
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="item webtool col-xs-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="panel">
                             <div class="panel-heading">
                                 <i class="devicon-wordpress-plain-wordmark colored"></i>
@@ -219,7 +225,7 @@
                             </div><!--//item-inner-->
                         </div><!--/panel -->
                     </div><!--//item-->
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="item language col-xs-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="panel">
                             <div class="panel-heading">
                                 <i class="devicon-javascript-plain colored"></i>
@@ -229,7 +235,7 @@
                             </div><!--//item-inner-->
                         </div><!--/panel -->
                     </div><!--//item-->
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="item language col-xs-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="panel">
                             <div class="panel-heading">
                                 <i class="devicon-jquery-plain-wordmark colored"></i>
@@ -239,7 +245,7 @@
                             </div><!--//item-inner-->
                         </div><!--/panel -->
                     </div><!--//item-->
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="item webtool col-xs-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="panel">
                             <div class="panel-heading">
                                 <i class="devicon-git-plain-wordmark colored"></i>
@@ -249,7 +255,7 @@
                             </div><!--//item-inner-->
                         </div><!--/panel -->
                     </div><!--//item-->
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="item webtool col-xs-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="panel">
                             <div class="panel-heading">
                                 <i class="devicon-bootstrap-plain-wordmark colored"></i>
@@ -259,7 +265,7 @@
                             </div><!--//item-inner-->
                         </div><!--/panel -->
                     </div><!--//item-->
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="item language col-xs-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="panel">
                             <div class="panel-heading">
                                 <i class="devicon-ruby-plain-wordmark colored"></i>
@@ -269,7 +275,7 @@
                             </div><!--//item-inner-->
                         </div><!--/panel -->
                     </div><!--//item-->
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="item other col-xs-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="panel">
                             <div class="panel-heading">
                                 <i class="devicon-photoshop-line colored"></i>
@@ -288,13 +294,13 @@
         
         <section id="portfolio-section" class="portfolio-section section">
             <h2 class="section-title">Portfolio</h2>
-            <ul id="filters" class="filters clearfix">
+            <ul id="filters2" class="filters2 clearfix">
                 <li class="type active" data-filter="*">All</li>
                 <li class="type" data-filter=".projects">Projects</li>
                 <li class="type" data-filter=".javascript">JavaScript</li>
                 <li class="type" data-filter=".design">Design</li>
             </ul><!--//filters-->
-            <div class="items-wrapper isotope row">
+            <div class="items-wrapper portfolio row">
                 <div class="item javascript col-md-3 col-xs-6 ">
                     <div class="item-inner">
                         <figure class="figure">

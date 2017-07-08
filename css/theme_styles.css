@@ -451,14 +451,16 @@ a.btn:hover {
   left: 0;
   top: 0;
 }
-.portfolio-section .filters {
+.filters1,
+.filters2 {
   list-style: none;
   margin: 0 auto;
   margin-bottom: 60px;
   text-align: center;
   border-bottom: 1px solid #e8e8e8;
 }
-.portfolio-section .filters .type {
+.filters1 .type,
+.filters2 .type {
   margin-right: 30px;
   list-style: none;
   display: inline-block;
@@ -469,10 +471,12 @@ a.btn:hover {
   text-transform: uppercase;
   font-weight: 500;
 }
-.portfolio-section .filters .type:last-child {
+.filters1 .type:last-child,
+.filters2 .type:last-child {
   margin-right: 0;
 }
-.portfolio-section .filters .type.active {
+.filters1 .type.active,
+.filters2 .type.active {
   color: #607D8B;
   border-bottom: 2px solid #607D8B;
 }
@@ -647,7 +651,8 @@ a.btn:hover {
   .education-section .item {
     padding: 0;
   }
-  .portfolio-section .filters .type {
+  .filters1 .type,
+  .filters2 .type {
     font-size: 12px;
     margin-right: 5px;
     padding: 8px 5px;
