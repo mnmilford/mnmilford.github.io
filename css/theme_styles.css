@@ -38,7 +38,7 @@ p {
 a.btn {
   background: #4b626d;
   color: #fff;
-  padding: 8px 15px;
+  padding: 14px 15px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   -ms-border-radius: 2px;
@@ -74,32 +74,34 @@ a.btn:hover {
 .header .top-bar {
   position: relative;
   padding-top: 15px;
-  padding-bottom: 120px;
+  padding-bottom: 150px;
 }
-.header .social {
+.social-networks .social {
   margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
 }
-.header .social a {
-  color: rgba(255, 255, 255, 0.8);
-  display: inline-block;
-  text-align: center;
-  width: 32px;
-  height: 32px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
+.social-networks .social img {
+  height: 24px;
+}
+.social-networks .social a {
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  padding-top: 2px;
   font-size: 16px;
-  border: 2px solid rgba(255, 255, 255, 0.8);
+  border: 2px solid #41545E;
 }
-.header .social a:hover {
-  color: #fff;
-  border-color: #fff;
+.social-networks .social a:hover {
+  border-color: #41545E;
 }
 .header .actions {
   position: absolute;
@@ -118,12 +120,13 @@ a.btn:hover {
 }
 .header .profile-image {
   position: absolute;
-  width: 160px;
-  height: 160px;
-  top: -80px;
-  margin-left: -80px;
+  width: 180px;
+  height: 180px;
+  top: -90px;
+  margin-left: -90px;
   left: 50%;
   border-radius: 100%;
+  border: 5px solid rgba(65, 84, 94, 0.5);
 }
 .header .name {
   font-size: 48px;
@@ -147,27 +150,53 @@ a.btn:hover {
   max-width: 800px;
   margin: 0 auto;
 }
-.header .contact-info {
+.social-networks {
   background: #4b626d;
   padding-top: 30px;
   padding-bottom: 30px;
   font-size: 16px;
+  -webkit-box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
 }
-.header .contact-info ul {
+.social-networks ul {
   margin-bottom: 0;
 }
-.header .contact-info li {
-  margin-right: 30px;
+.social-networks li {
+  margin-right: 10px;
+}
+.social-networks li a {
   color: rgba(255, 255, 255, 0.8);
 }
-.header .contact-info li a {
-  color: rgba(255, 255, 255, 0.8);
-}
-.header .contact-info li a:hover {
-  color: #fff;
-}
-.header .contact-info li:last-child {
+.social-networks li:last-child {
   margin-right: 0;
+}
+
+.outline-inward {
+  display: inline-block;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+.outline-inward:before {
+  content: '';
+  position: absolute;
+  border: #41545E solid 3px;
+  top: -11px;
+  right: -11px;
+  bottom: -11px;
+  left: -11px;
+  opacity: 0;
+  transition-duration: .2s;
+  transition-property: top right bottom left;
+}
+.outline-inward:hover:before {
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+  opacity: 1;
 }
 
 /* Page Nav */
@@ -259,6 +288,9 @@ a.btn:hover {
   margin-bottom: 45px;
   font-size: 24px;
   text-align: center;
+}
+.experiences-section {
+  display: none;
 }
 .timeline {
   border-left: 3px solid #607D8B;
@@ -501,12 +533,26 @@ a.btn:hover {
   left: 0;
   top: 0;
 }
+.contact-section {
+  background-color: #41545E;
+  margin-bottom: 0;
+}
+.contact-section .section-title {
+  color: #fff;
+}
+.contact-section a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+}
+.contact-section a:hover {
+  color: rgb(255, 255, 255);
+}
 .contact-section .intro {
   position: relative;
   padding: 30px;
   padding-left: 190px;
   font-size: 16px;
-  color: #666;
+  color: #fff;
 }
 .contact-section .intro .profile-image {
   width: 120px;
@@ -524,40 +570,19 @@ a.btn:hover {
 .contact-section .service-list li {
   margin-bottom: 15px;
 }
-.contact-section .service-list .fa {
-  color: #607D8B;
-}
-.contact-section .social {
-  margin-bottom: 0;
-}
-.contact-section .social li {
-  margin-right: 10px;
-}
-.contact-section .social li:last-child {
-  margin-right: 0;
-}
-.contact-section .social a {
-  display: inline-block;
-  text-align: center;
-  font-size: 24px;
-  color: #8a8a8a;
-}
-.contact-section .social a:hover {
-  color: #607D8B;
-}
-.footer .container {
-  padding: 30px;
-  color: #8a8a8a;
-  letter-spacing: 0.5px;
-}
-.footer .container a {
-  color: #8a8a8a;
-}
-/* Extra small devices (phones, less than 768px) */
+
+/* Phones less than 768px */
 @media (max-width: 767px) {
-  .header .social {
+  .header .top-bar {
+    padding-bottom: 100px;
+  }
+  .social-networks .social {
     margin: 0 auto;
-    text-align: center;
+    flex-wrap: wrap;
+  }
+  .social-networks .social li:first-of-type {
+    flex-basis: 100%;
+    margin-bottom: 15px;
   }
   .header .actions {
     position: static;
@@ -566,13 +591,10 @@ a.btn:hover {
     text-align: center;
   }
   .header .actions .btn {
-    margin-bottom: 15px;
-    font-size: 12px;
+    font-size: 13px;
     display: inline-block;
-    width: 100%;
-  }
-  .header .actions .btn:last-child {
-    margin-bottom: 0;
+    width: calc(50% - 10px);
+    line-height: 12px;
   }
   .header .name {
     font-size: 36px;
@@ -580,17 +602,17 @@ a.btn:hover {
   .header .title {
     font-size: 22px;
   }
-  .header .contact-info ul {
+  .social-networks ul {
     display: flex;
     justify-content: center;
   }
-  .header .contact-info li:first-child {
+  .social-networks li:first-child {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .header .contact-info li {
-    margin-right: 15px;
+  .social-networks li {
+    margin-right: 8px;
   }
   .section {
     padding: 30px;
@@ -653,10 +675,15 @@ a.btn:hover {
   }
   .contact-section .intro {
     padding: 0;
+  }
+  .contact-section .intro p:last-child {
+    padding-top: 15px;
+    font-size: 18px;
     text-align: center;
   }
   .contact-section .intro .profile-image {
     position: static;
+    display: block;
     margin: 0 auto;
     margin-bottom: 30px;
     text-align: center;
@@ -664,8 +691,14 @@ a.btn:hover {
   .contact-section .service-list {
     margin-left: 0;
   }
-  .contact-section .social {
-    margin: 0 auto;
+}
+
+/* Phones less than 412px */
+@media (max-width: 411px) {
+  .header .actions .btn {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
   }
 }
 /* Small devices (tablets, 768px and up) */
