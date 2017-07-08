@@ -149,27 +149,50 @@ a.btn:hover {
   max-width: 800px;
   margin: 0 auto;
 }
-.header .contact-info {
+.header .social-networks {
   background: #4b626d;
   padding-top: 30px;
   padding-bottom: 30px;
   font-size: 16px;
 }
-.header .contact-info ul {
+.header .social-networks ul {
   margin-bottom: 0;
 }
-.header .contact-info li {
+.header .social-networks li {
   margin-right: 10px;
+}
+.header .social-networks li a {
   color: rgba(255, 255, 255, 0.8);
 }
-.header .contact-info li a {
-  color: rgba(255, 255, 255, 0.8);
-}
-.header .contact-info li a:hover {
-  color: #fff;
-}
-.header .contact-info li:last-child {
+.header .social-networks li:last-child {
   margin-right: 0;
+}
+
+.outline-inward {
+  display: inline-block;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+.outline-inward:before {
+  content: '';
+  position: absolute;
+  border: #41545E solid 3px;
+  top: -11px;
+  right: -11px;
+  bottom: -11px;
+  left: -11px;
+  opacity: 0;
+  transition-duration: .2s;
+  transition-property: top right bottom left;
+}
+.outline-inward:hover:before {
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+  opacity: 1;
 }
 
 /* Page Nav */
@@ -575,16 +598,16 @@ a.btn:hover {
   .header .title {
     font-size: 22px;
   }
-  .header .contact-info ul {
+  .header .social-networks ul {
     display: flex;
     justify-content: center;
   }
-  .header .contact-info li:first-child {
+  .header .social-networks li:first-child {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .header .contact-info li {
+  .header .social-networks li {
     margin-right: 8px;
   }
   .section {
