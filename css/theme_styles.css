@@ -408,7 +408,7 @@ a.btn:hover {
   font-weight: 300;
 }
 .skills-section .top-skills {
-  margin-bottom: 60px;
+  margin-bottom: -40px;
 }
 .skills-section .top-skills .item {
   margin-bottom: 45px;
@@ -418,8 +418,10 @@ a.btn:hover {
   margin-bottom: 15px;
 }
 .skills-section .panel-heading {
+  display: flex;
+  justify-content: center;
   padding-top: 15px;
-  padding-bottom: 0;
+  padding-bottom: 10px;
   font-size: 200px;
   line-height: 200px;
 }
@@ -453,10 +455,12 @@ a.btn:hover {
 }
 .filters1,
 .filters2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   list-style: none;
-  margin: 0 auto;
+  padding: 0;
   margin-bottom: 60px;
-  text-align: center;
   border-bottom: 1px solid #e8e8e8;
 }
 .filters1 .type,
@@ -645,11 +649,21 @@ a.btn:hover {
     margin-bottom: 10px;
   }
   .skills-section .panel-heading {
-    font-size: 125px;
-    line-height: 125px;
+    font-size: 110px;
+    line-height: 110px;
+  }
+  .skills-section .top-skills .item {
+    margin-bottom: 15px;
+  }
+  .skills-section .top-skills {
+    margin-bottom: 0;
   }
   .education-section .item {
     padding: 0;
+  }
+  .filters1,
+  .filters2 {
+    margin-bottom: 30px;
   }
   .filters1 .type,
   .filters2 .type {
@@ -704,6 +718,10 @@ a.btn:hover {
     display: inline-block;
     width: 100%;
     margin-bottom: 10px;
+  }
+  .skills-section .panel-heading {
+    font-size: 75px;
+    line-height: 75px;
   }
 }
 /* Small devices (tablets, 768px and up) */
