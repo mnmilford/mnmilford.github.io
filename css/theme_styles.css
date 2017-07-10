@@ -290,7 +290,7 @@ a.btn:hover {
   text-align: center;
 }
 .experiences-section {
-  display: none;
+  /*display: none;*/
 }
 .timeline {
   border-left: 3px solid #607D8B;
