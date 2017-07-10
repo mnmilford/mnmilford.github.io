@@ -484,6 +484,9 @@ a.btn:hover {
   color: #607D8B;
   border-bottom: 2px solid #607D8B;
 }
+.portfolio-section {
+  display: none;
+}
 .portfolio-section .item {
   margin-bottom: 30px;
 }
