@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-    console.image('http://i.imgur.com/JVMHg6L.jpg');
-
     /* ======= Scrollspy ======= */
    $('body').scrollspy({ target: '#page-nav-wrapper', offset: 100});
     
