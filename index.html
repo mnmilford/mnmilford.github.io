@@ -1,419 +1,96 @@
-
-<!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]> <html lang="en"> <![endif]-->
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Michael Milford - IT Pro | Web Dev Hobbyist | Tech Enthusiast</title>
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Michael N. Milford">    
-    <link rel="shortcut icon" href="assets/favicon.ico">  
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">   
-    <!-- Plugins CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-    
-    <!-- Theme CSS -->  
-    <link id="theme-style" rel="stylesheet" href="css/theme_styles.css">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head> 
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Z Dev Labs</title>
+<meta name="description" content="Small builds by Michael Milford. Each one solves a real problem of mine. None of them come with a maintenance plan.">
+<link rel="canonical" href="https://labs.thezdev.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Z Dev Labs">
+<meta property="og:description" content="Small builds by Michael Milford. Each one solves a real problem of mine. None of them come with a maintenance plan.">
+<meta property="og:url" content="https://labs.thezdev.com/">
+<meta property="og:image" content="https://labs.thezdev.com/job-tracker/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"%3E%3Crect width="32" height="32" rx="7" fill="%233A7D7B"/%3E%3Ctext x="16" y="22" font-family="system-ui,sans-serif" font-size="17" font-weight="700" text-anchor="middle" fill="%23fff"%3EZ%3C/text%3E%3C/svg%3E'>
+<style>
+  :root {
+    color-scheme: light;
+    --page: #f9f9f7; --surface: #fcfcfb; --raised: #ffffff;
+    --ink: #0b0b0b; --ink-2: #52514e; --muted: #6b6a65;
+    --grid: #e1e0d9; --border: rgba(11, 11, 11, 0.10);
+    --accent: #2f6b69; --accent-bg: #eaf4f4; --brand: #3a7d7b;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 32px -18px rgba(0, 0, 0, 0.18);
+    --radius: 12px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --page: #0d0d0d; --surface: #1a1a19; --raised: #222220;
+      --ink: #f0efec; --ink-2: #c3c2b7; --muted: #9a988f;
+      --grid: #2c2c2a; --border: rgba(255, 255, 255, 0.10);
+      --accent: #6cc0bc; --accent-bg: #1d3433; --brand: #6cc0bc;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -18px rgba(0, 0, 0, 0.6);
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-underline-offset: 2px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+  header { padding: 72px 0 40px; }
+  .mark { display: inline-flex; align-items: center; gap: 10px; font-weight: 650; color: var(--ink-2); font-size: 14px; letter-spacing: 0.02em; }
+  .mark i { width: 26px; height: 26px; border-radius: 7px; background: var(--brand); color: #fff; display: grid; place-items: center; font-style: normal; font-weight: 700; font-size: 15px; }
+  h1 { font-size: clamp(32px, 5vw, 44px); line-height: 1.1; letter-spacing: -0.02em; margin: 20px 0 14px; }
+  .lede { color: var(--ink-2); font-size: 18px; max-width: 34em; margin: 0; }
+  .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
+  .builds { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+  .build { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); text-decoration: none; color: inherit; transition: border-color 160ms, transform 160ms; }
+  .build:hover { border-color: var(--accent); transform: translateY(-1px); }
+  .build-body { padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+  .build h2 { margin: 0; font-size: 20px; letter-spacing: -0.01em; }
+  .build p { margin: 0; color: var(--ink-2); }
+  .meta { margin-top: auto; padding-top: 8px; font-size: 13px; color: var(--muted); }
+  .go { color: var(--accent); font-weight: 600; font-size: 14px; }
+  .build img { width: 100%; height: 100%; object-fit: cover; object-position: left top; display: block; border-left: 1px solid var(--border); background: var(--raised); }
+  .next { margin-top: 16px; border: 1px dashed var(--grid); border-radius: var(--radius); padding: 20px 24px; color: var(--muted); }
+  footer { padding: 56px 0 64px; color: var(--muted); font-size: 14px; }
+  footer a { color: var(--ink-2); }
+  @media (max-width: 640px) {
+    header { padding: 48px 0 28px; }
+    .build { grid-template-columns: 1fr; }
+    .build img { border-left: 0; border-top: 1px solid var(--border); aspect-ratio: 16 / 10; }
+  }
+  @media (prefers-reduced-motion: reduce) { .build { transition: none; } .build:hover { transform: none; } }
+</style>
+</head>
 <body>
-    
-    <header class="header">
-        <div class="top-bar container-fluid">
-            <div class="actions">
-                <a class="btn scrollto" href="#contact-section"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Me</a>
-                <a class="btn" href="assets/Resume_Michael_Milford.pdf" download><i class="fa fa-download" aria-hidden="true"></i> Download Resume</a>
-            </div><!--//actions-->
-        </div><!--//top-bar-->
-        
-        <div class="intro">
-            <div class="container text-center">
-                <img class="profile-image" src="assets/profile-pic.png" alt="">
-                <h1 class="name">Michael Milford</h1>
-                <div class="title">IT Pro | Web Dev Hobbyist | Tech Enthusiast</div>
-                <div class="profile">
-                    <p>An aspiring Systems/Network Admin currently looking for a full-time technical support position. I'm currently A+ certified and studying for the Network+. My future plans include studying for the CompTIA Security+ and multiple MCSA specialties.
-                </div><!--//profile-->
-            </div><!--//container-->
-        </div><!--//intro-->
-         
-        <div class="page-nav-space-holder hidden-xs">
-            <div id="page-nav-wrapper" class="page-nav-wrapper text-center">
-                <div class="container">
-                    <ul id="page-nav" class="nav page-nav list-inline">
-                        <li><a class="scrollto" href="#experiences-section">Experiences</a></li>
-                        <li><a class="scrollto" href="#education-section">Education</a></li>
-                        <li><a class="scrollto" href="#skills-section">Skills</a></li>
-                        <!-- <li><a class="scrollto" href="#portfolio-section">Portfolio</a></li> -->
-                        <li><a class="scrollto" href="#contact-section">Contact</a></li>
-                    </ul><!--//page-nav-->
-                </div>
-            </div><!--//page-nav-wrapper-->
-        </div>
-        
-    </header><!--//header-->
-    
-    <div class="wrapper container">
-        <section id="experiences-section" class="experiences-section section">
-            <h2 class="section-title">Work Experiences</h2>
-            <div class="timeline">
-                <div class="item">
-                    <div class="work-place">
-                        <h3 class="place">Genesis Technologies, Inc.</h3>
-                        <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i>Austin, TX | 78745</div>
-                    </div>
-                    <div class="job-meta">
-                        <div class="title">Account Manager</div>
-                        <div class="time">2013 - 2017</div>
-                    </div><!--//job-meta-->
-                    <div class="job-desc">
-                        <ul>
-                            <li>Developed marketing campaigns utilizing Mailchimp, Wordpress (blogging), Facebook, and LinkedIn</li>
-                            <li>Planned, coordinated and delivered technical product demos via GoToMeeting</li>
-                            <li>Achieved software sales of 60k/mth across 3 target markets (non-profit, school, medical)</li>
-                            <li>Increased total profitable sales by working closely with existing customers while providing exceptional service</li>
-                            <li>Provided technical support for a variety of software including Adobe CC, Microsoft products, Dragon NaturallySpeaking, and others as needed</li>
-                            <li>Prospected and developed new business opportunities in target markets through the use of email campaigns, cold-calling, and blogging</li>
-                            <li>Responded to RFPs by developing custom proposals</li>
-                            <li>Answered inbound sales and customer service inquires while converting leads into a sale or scheduled a product demo</li>
-                            <li>Other administrative responsibilities as assigned - including sales invoicing, shipping &amp; fulfillment, order and customer record entry, and procurement and purchasing support</li>
-                        </ul>
-                    </div><!--//job-desc-->
-                </div><!--//item-->
-                
-                <div class="item">
-                    <div class="work-place">
-                        <h3 class="place">Super Computer Bros.</h3>
-                        <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i>Austin, TX | 78660</div>
-                    </div>
-                    <div class="job-meta">
-                        <div class="title">Co-Founder &amp; <br>Web Consultant</div>
-                        <div class="time">2013 - 2016</div>
-                    </div><!--//job-meta-->
-                    <div class="job-desc">
-                        <ul>
-                            <li>Provided tech support services for clients including regular computer maintenance, network installation, software troubleshooting, email configuration, and more as needed</li>
-                            <li>Designed, developed, and maintained client WordPress websites</li>
-                            <li>Consulted with clients on social media campaigns and SEO</li>
-                            <li>Produced marketing materials including logos, flyers, HTML e-mails, and landing pages</li>
-                        </ul>
-                    </div><!--//job-desc-->
-                </div><!--//item-->
-                
-                <div class="item">
-                    <div class="work-place">
-                        <h3 class="place">Financial Corporation of America</h3>
-                        <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i>Austin, TX | 78759</div>
-                    </div>
-                    <div class="job-meta">
-                        <div class="title">Client Liaison &amp; <br>Tech Support</div>
-                        <div class="time">2012</div>
-                    </div><!--//job-meta-->
-                    <div class="job-desc">
-                        <ul>
-                            <li>Coordinated with clients to process incoming new business accounts for collection and update client payments</li>
-                            <li>Created reports (daily, weekly, monthly) of accounts & balances to be analyzed by manager</li>
-                            <li>Provided first-level support for PCs and thin clients including Windows imaging, regular maintenance, and proper security configuration</li>
-                        </ul>
-                    </div><!--//job-desc-->
-                </div><!--//item-->
-
-                <div class="item">
-                    <div class="work-place">
-                        <h3 class="place">Dell Inc.</h3>
-                        <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i>Round Rock, TX | 78746</div>
-                    </div>
-                    <div class="job-meta">
-                        <div class="title">Intern</div>
-                        <div class="time">2013 - 2015</div>
-                    </div><!--//job-meta-->
-                    <div class="job-desc">
-                        <ul>
-                            <li>Reviewed and filed employee expense reports</li>
-                            <li>Sorted mail and distributed to various departments</li>
-                            <li>Created new intern instruction guide (for my replacement)</li>
-                            <li>Other administrative duties as assigned</li>
-                        </ul>
-                    </div><!--//job-desc-->
-                </div><!--//item-->
-                
-            </div><!--//timeline-->
-            
-        </section><!--//section-->
-        
-        <section id="education-section" class="education-section section">
-            <h2 class="section-title">Education</h2>
-            <div class="row">
-                <div class="item col-xs-12 col-sm-6">
-                    <div class="item-inner">
-                        <h3 class="degree">BBA, Digital Media Management</h3>
-                        <div class="education-body">
-                            St. Edward's University
-                        </div><!--//education-body-->
-                        <div class="time">2008 - 2012</div>
-                        <div class="desc">
-                            Students in this degree program learn how to manage various forms of digital media, including music, television, movies and games, and explore the business world’s adoption of digital. In addition to core business areas, such as accounting, marketing, economics and management, students delve into digital marketing, project management and social networking.
-                        </div>
-                    </div><!--//item-inner-->
-                </div><!--//item-->
-                <div class="item col-xs-12 col-sm-6">
-                    <div class="item-inner">
-                        <h3 class="degree">Fundamentals of Web Development</h3>
-                        <div class="education-body">
-                            Dev Bootcamp
-                        </div><!--//education-body-->
-                        <div class="time">2017</div>
-                        <div class="desc">
-                            A 9-week, online, software development course where students learn the core concepts behind HTML, CSS, Ruby, JavaScript, and SQL.
-                        </div>
-                    </div><!--//item-inner-->
-                </div><!--//item-->
-                
-            </div><!--//row-->
-        </section><!--//section-->
-        
-        
-        <section id="skills-section" class="skills-section section text-center">
-            <h2 class="section-title">Professional Skills</h2>
-            <ul id="filters1" class="filters1 clearfix">
-                <li class="type active" data-filter="*">All</li>
-                <li class="type" data-filter=".cert">Certifications</li>
-                <li class="type" data-filter=".language">Web Languages</li>
-                <li class="type" data-filter=".webtool">Web Tools</li>
-                <li class="type" data-filter=".other">Other</li>
-            </ul><!--//filters-->
-            <div class="items-wrapper top-skills">
-                <div class="row">
-                    <div class="item cert col-xs-6 col-md-4 col-lg-3">
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <img src="assets/aplus.png" alt="">
-                            </div>
-                            <div class="panel-body">
-                                <div class="level"></div>
-                            </div><!--//item-inner-->
-                        </div><!--/panel -->
-                    </div><!--//item-->
-                    <div class="item language col-xs-6 col-md-4 col-lg-3">
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <i class="devicon-html5-plain-wordmark colored"></i>
-                            </div>
-                            <div class="panel-body">
-                                <div class="level">6+ Years</div>
-                            </div><!--//item-inner-->
-                        </div><!--/panel -->
-                    </div><!--//item-->
-                    <div class="item language col-xs-6 col-md-4 col-lg-3">
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <i class="devicon-css3-plain-wordmark colored"></i>
-                            </div>
-                            <div class="panel-body">
-                                <div class="level">6+ Years</div>
-                            </div><!--//item-inner-->
-                        </div><!--/panel -->
-                    </div><!--//item-->
-                    <div class="item webtool col-xs-6 col-md-4 col-lg-3">
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <i class="devicon-wordpress-plain-wordmark colored"></i>
-                            </div>
-                            <div class="panel-body">
-                                <div class="level">3+ Years</div>
-                            </div><!--//item-inner-->
-                        </div><!--/panel -->
-                    </div><!--//item-->
-                    <div class="item language col-xs-6 col-md-4 col-lg-3">
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <i class="devicon-javascript-plain colored"></i>
-                            </div>
-                            <div class="panel-body">
-                                <div class="level">1 Year</div>
-                            </div><!--//item-inner-->
-                        </div><!--/panel -->
-                    </div><!--//item-->
-                    <div class="item language col-xs-6 col-md-4 col-lg-3">
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <i class="devicon-jquery-plain-wordmark colored"></i>
-                            </div>
-                            <div class="panel-body">
-                                <div class="level">1 Year</div>
-                            </div><!--//item-inner-->
-                        </div><!--/panel -->
-                    </div><!--//item-->
-                    <div class="item webtool col-xs-6 col-md-4 col-lg-3">
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <i class="devicon-git-plain-wordmark colored"></i>
-                            </div>
-                            <div class="panel-body">
-                                <div class="level">1 Year</div>
-                            </div><!--//item-inner-->
-                        </div><!--/panel -->
-                    </div><!--//item-->
-                    <div class="item webtool col-xs-6 col-md-4 col-lg-3">
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <i class="devicon-bootstrap-plain-wordmark colored"></i>
-                            </div>
-                            <div class="panel-body">
-                                <div class="level">1 Year</div>
-                            </div><!--//item-inner-->
-                        </div><!--/panel -->
-                    </div><!--//item-->
-                    <div class="item language col-xs-6 col-md-4 col-lg-3">
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <i class="devicon-ruby-plain-wordmark colored"></i>
-                            </div>
-                            <div class="panel-body">
-                                <div class="level">6 Months</div>
-                            </div><!--//item-inner-->
-                        </div><!--/panel -->
-                    </div><!--//item-->
-                    <div class="item other col-xs-6 col-md-4 col-lg-3">
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <i class="devicon-photoshop-line colored"></i>
-                            </div>
-                            <div class="panel-body">
-                                <div class="level">3+ Years</div>
-                            </div><!--//item-inner-->
-                        </div><!--/panel -->
-                    </div><!--//item-->
-                </div><!--//row-->
-
-            </div><!--//top-skills-->
-            
-        </section><!--//skills-section-->
-
-        
-        <section id="portfolio-section" class="portfolio-section section">
-            <h2 class="section-title">Portfolio</h2>
-            <ul id="filters2" class="filters2 clearfix">
-                <li class="type active" data-filter="*">All</li>
-                <li class="type" data-filter=".projects">Projects</li>
-                <li class="type" data-filter=".javascript">JavaScript</li>
-                <li class="type" data-filter=".design">Design</li>
-            </ul><!--//filters-->
-            <div class="items-wrapper portfolio row">
-                <div class="item javascript col-md-3 col-xs-6 ">
-                    <div class="item-inner">
-                        <figure class="figure">
-                            <img class="img-responsive" src="assets/sample.jpg" alt="" />
-                        </figure>
-                        <div class="content text-left">
-                            <h3 class="sub-title"><a href="#">Project Lorem Ipsum</a></h3>
-                            <div class="meta">AngularJS</div>
-                            <div class="action"><a href="#">View on Github</a></div>
-                        </div><!--//content-->    
-                        <a class="link-mask" href="#"></a>              
-                    </div><!--//item-inner-->
-                </div><!--//item-->
-                <div class="item projects col-md-3 col-xs-6 ">
-                    <div class="item-inner">
-                        <figure class="figure">
-                            <img class="img-responsive" src="assets/sample.jpg" alt="" />
-                        </figure>
-                        <div class="content text-left">
-                            <h3 class="sub-title"><a href="#">Project Lorem Ipsum</a></h3>
-                            <div class="meta">Django</div>
-                            <div class="action"><a href="#">View on Github</a></div>
-                        </div><!--//content-->    
-                        <a class="link-mask" href="#"></a>              
-                    </div><!--//item-inner-->
-                </div><!--//item-->
-                <div class="item projects javascript col-md-3 col-xs-6 ">
-                    <div class="item-inner">
-                        <figure class="figure">
-                            <img class="img-responsive" src="assets/sample.jpg" alt="" />
-                        </figure>
-                        <div class="content text-left">
-                            <h3 class="sub-title"><a href="#">Project Lorem Ipsum</a></h3>
-                            <div class="meta">Django/JavaScript</div>
-                            <div class="action"><a href="#">View on Github</a></div>
-                        </div><!--//content-->    
-                        <a class="link-mask" href="#"></a>              
-                    </div><!--//item-inner-->
-                </div><!--//item-->
-                <div class="item javascript col-md-3 col-xs-6 ">
-                    <div class="item-inner">
-                        <figure class="figure">
-                            <img class="img-responsive" src="assets/sample.jpg" alt="" />
-                        </figure>
-                        <div class="content text-left">
-                            <h3 class="sub-title"><a href="#">Project Lorem Ipsum</a></h3>
-                            <div class="meta">ReactJS</div>
-                            <div class="action"><a href="#">View on Github</a></div>
-                        </div><!--//content-->    
-                        <a class="link-mask" href="#"></a>              
-                    </div><!--//item-inner-->
-                </div><!--//item-->           
-                
-            </div><!--//item-wrapper-->
-            
-        </section><!--//section-->
-        
-        
-    </div><!--//wrapper-->
-
-    <div class="social-networks">
-        <div class="container text-center">
-            <ul class="social list-inline">
-                <li>Social Networks:</li>
-                <li><a class="outline-inward" href="https://www.linkedin.com/in/michaelnmilford/" target="_blank"><img src="assets/linkedin.svg"></a></li>
-                <li><a class="outline-inward" href="https://github.com/mnmilford" target="_blank"><img src="assets/github.svg"></a></li>
-                <li><a class="outline-inward" href="https://teamtreehouse.com/michaelmilford" target="_blank"><img src="assets/treehouse.svg"></a></li>
-                <li><a class="outline-inward" href="https://www.facebook.com/michael.milford" target="_blank"><img src="assets/facebook.svg"></a></li>
-                <li><a class="outline-inward" href="https://steamcommunity.com/id/jklemony" target="_blank"><img src="assets/steam.svg"></a></li>
-            </ul>
-        </div><!--//container-->
-    </div><!--//social-networks-->
-
-    <section id="contact-section" class="contact-section section">
-        <div class="intro container">
-            <img class="profile-image" src="assets/profile-pic.png" alt="">
-            <div class="dialog">
-                <p>I'm not currently taking on freelance work, but do reach out with any interesting opportunities!</p>
-                <p><strong>I can help with the following:</strong></p>
-                <ul class="list-unstyled service-list">
-                    <li><i class="fa fa-check" aria-hidden="true"></i> Technical Support</li>
-                    <li><i class="fa fa-check" aria-hidden="true"></i> Web Design</li>
-                    <li><i class="fa fa-check" aria-hidden="true"></i> Web Development</li>
-                </ul>
-                <p>Email me at <a href="mailto:hi@michael-milford.com">hi@michael-milford.com</a></p>
-            </div><!--//diaplog-->
-        </div><!--//intro-->
-
-    </section><!--//section-->
-    
-    
-    <!-- Javascript -->          
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script> 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js"></script> 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js"></script>  
-
-    <!-- custom js -->
-    <script type="text/javascript" src="scripts/main.js"></script>  
-    
-
+<div class="wrap">
+  <header>
+    <div class="mark"><i aria-hidden="true">Z</i>The Z Dev Labs</div>
+    <h1>Small builds, mostly for me.</h1>
+    <p class="lede">Each one solves a real problem I had. I decide what it should do and how it should feel, AI agents write the code, and none of it comes with a maintenance plan.</p>
+  </header>
+  <main>
+    <p class="eyebrow">Builds</p>
+    <ul class="builds">
+      <li>
+        <a class="build" href="job-tracker/">
+          <div class="build-body">
+            <h2>Job Tracker</h2>
+            <p>A job-application tracker that tells me where things stand and what changed overnight. Claude keeps it current from my inbox. Has a Sankey chart nobody asked for.</p>
+            <p class="meta">November 2026 · about 22 hours</p>
+            <span class="go">Click around the demo →</span>
+          </div>
+          <img src="img/job-tracker.webp" alt="The Job Tracker main view: applications grouped by stage, with a Today panel of overdue and upcoming items." width="1600" height="1000" loading="lazy">
+        </a>
+      </li>
+    </ul>
+    <p class="next">More on the way. Probably.</p>
+  </main>
+  <footer>
+    Built by Michael Milford · <a href="https://github.com/mnmilford">GitHub</a>
+  </footer>
+</div>
 </body>
-</html> 
-
+</html>
